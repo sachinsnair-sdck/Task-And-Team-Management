@@ -1,0 +1,23 @@
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Java / Spring Boot
+backend/target/
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# Angular / Node
+frontend/node_modules/
+frontend/.angular/
+frontend/dist/
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Docker / DB
+pgdata/
+.env
