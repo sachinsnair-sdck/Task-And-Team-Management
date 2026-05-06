@@ -1,0 +1,20 @@
+<h2>User Registry</h2>
+<table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+  <thead style="background-color: #f2f2f2;">
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.role }}</td>
+    </tr>
+    <tr *ngIf="users.length === 0">
+      <td colspan="3" style="text-align: center;">No users found in database.</td>
+    </tr>
+  </tbody>
+</table>

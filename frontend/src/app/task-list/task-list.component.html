@@ -1,0 +1,29 @@
+<h2>Task Management</h2>
+<table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+  <thead style="background-color: #f2f2f2;">
+    <tr>
+      <th>ID</th>
+      <th>Task Title</th>
+      <th>Status</th>
+      <th>Assigned To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.id }}</td>
+      <td>{{ task.title }}</td>
+      <td>
+        <span [style.color]="task.status === 'COMPLETED' ? 'green' : 'orange'">
+          {{ task.status }}
+        </span>
+      </td>
+      <!-- Notice the safe navigation operator '?' in case user is null -->
+      <td>{{ task.user?.userName || 'Unassigned' }}</td>
+    </tr>
+    <tr *ngIf="tasks.length === 0">
+      <td colspan="4" style="text-align: center; padding: 10px;">
+        No tasks found. Time to get to work!
+      </td>
+    </tr>
+  </tbody>
+</table>
